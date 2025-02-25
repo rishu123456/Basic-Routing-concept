@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Navbar /> 
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Suspense fallback={"loading.."}><Dashboard></Dashboard></Suspense>} />
           <Route path="/landing" element={<Landing />} />
         </Routes>
       </BrowserRouter>
